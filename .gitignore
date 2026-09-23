@@ -1,0 +1,71 @@
+# Local secrets and environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*credentials*.json
+*secret*.json
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.pytest-api-tmp/
+*.sqlite
+*.sqlite3
+*.db
+.mypy_cache/
+.ruff_cache/
+coverage.xml
+.coverage
+htmlcov/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/coverage/
+frontend/test-results/
+frontend/playwright-report/
+
+# Local logs and editor files
+*.log
+.DS_Store
+.vscode/
+.idea/
+
+# Data safety: only documentation, placeholders, and the approved fallback
+# restaurant fixture may enter Git. All other data is local by default.
+/data/*
+!/data/data_dictionary.md
+!/data/demo/
+/data/demo/*
+!/data/demo/README.md
+!/data/demo/fallback_restaurants.json
+!/data/raw/
+/data/raw/*
+!/data/raw/.gitkeep
+!/data/processed/
+/data/processed/*
+!/data/processed/.gitkeep
+!/data/reports/
+/data/reports/*
+!/data/reports/.gitkeep
+!/data/clustering/
+/data/clustering/*
+!/data/clustering/.gitkeep
+!/data/features/
+/data/features/*
+!/data/features/.gitkeep
+
+# Generated local fixture output
+pipeline/tests/fixtures/generated/
+
+# OS-specific
+Thumbs.db

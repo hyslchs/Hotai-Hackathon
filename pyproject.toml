@@ -1,0 +1,11 @@
+[project]
+name = "yoxi-ai-demo"
+version = "0.1.0"
+description = "Privacy-safe foundation for the yoxi AI demo"
+requires-python = ">=3.12,<3.13"
+
+[tool.pytest.ini_options]
+testpaths = ["pipeline/tests", "backend/tests"]
+pythonpath = ["."]
+addopts = "-ra"
+
