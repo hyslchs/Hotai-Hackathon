@@ -181,3 +181,13 @@ This document records durable decisions that affect later phases. Do not use it 
 - Consequences: The detail view demonstrates the review and rating interaction without making a claim about restaurant reputation or recording a user opinion. Live Places ratings, when present, remain separately identified as the restaurant's public rating.
 - Reversible: Yes; remove the detail section without changing recommendation or feedback APIs.
 - Approval: User requested this behavior on 2026-09-23.
+
+### D-015 — Keep the source repository private and exclude local data
+
+- Status: Accepted
+- Date: 2026-09-23
+- Context: D-002 limited Git to local metadata. The user later asked to put this project in a new GitHub repository and chose private visibility. The local workspace contains raw trips, derived artifacts, environment secrets, and dependency/build output that must not accompany the source code.
+- Decision: Create `hyslchs/Hotai-Hackathon` as a private GitHub repository and push the reviewed source on `main`. Treat `data/` as excluded by default; allow only its data dictionary, README, placeholders, and the explicitly named hand-authored fallback restaurant fixture. Keep raw trips, processed rows, fitted artifacts, `.env`, keys, local databases, dependencies, and build output out of Git.
+- Evidence: The initial source commit `8d8affd` contained 118 files; the largest tracked file was 100,316 bytes. `scripts/check_tracking.ps1` passed for all 118 files, and the raw CSV Git blob was absent from `main` history. GitHub showed the repository as Private with the pushed `main` branch.
+- Consequences: Authorized collaborators can review the code and instructions. A fresh clone requires separately authorized input data and local artifact generation for the complete backend demo. Repository visibility or deployment requires a separate user decision.
+- Approval: User requested the new repository and explicitly chose private visibility on 2026-09-23.
